@@ -3,6 +3,18 @@ As the card software for the HP Microserver GEN 6 remote access card is rather o
 
 This provides access to either the KVM console or the media manager via a Ubuntu 12.04 docker image and vnc client
 
+## docker-compose
+
+Create `.env` config with host credentials.
+
+```
+docker-compose up
+```
+
+KVM VNC access is `localhost:5902` and Media VNC is `localhost:5903` 
+
+## Docker
+
 To run to get access to the KVM console
 
     docker run \

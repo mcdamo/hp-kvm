@@ -1,0 +1,33 @@
+version: "3.6"
+
+services:
+  kvm:
+    build: .
+    ports:
+      - "5902:5900"
+    restart: "always"
+    environment:
+      KVM_HOST: $KVM_HOST
+      KVM_USER: $KVM_USER
+      KVM_PASSWORD: $KVM_PASSWORD
+      KVM_DOMAIN: home
+      KVM_SCRIPT: kvm
+      VNC_PORT: 5900
+      VNC_PASSWORD: secret
+      VNC_RESOLUTION: 800x600
+      KEYMAP: us
+  media:
+    build: .
+    ports:
+      - "5903:5900"
+    restart: "always"
+    environment:
+      KVM_HOST: $KVM_HOST
+      KVM_USER: $KVM_USER
+      KVM_PASSWORD: $KVM_PASSWORD
+      KVM_DOMAIN: home
+      KVM_SCRIPT: media
+      VNC_PORT: 5900
+      VNC_PASSWORD: secret
+      VNC_RESOLUTION: 800x600
+      KEYMAP: us
